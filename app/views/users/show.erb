@@ -10,13 +10,16 @@
     </section>
   </aside>
 </div>
+<!-- ОФОРМИТЬ -->
+<b>Загруженные рисунки:</b>
+<%= will_paginate (@picture) %>
 <div>
-  <%= @picture.each do |l| %>
+  <% @picture.each do |l| %>
 
-      <%= image_tag(l)%>
+      <%= link_to image_tag(l.link.url), controller: "pictures",
+                  action: "show", user_id: params[:id], id: l.id  %>
 
-  <% end%>
-
-
+  <% end %>
 </div>
+<%= will_paginate (@picture) %>
 <br />

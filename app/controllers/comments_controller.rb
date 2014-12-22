@@ -6,14 +6,21 @@ class CommentsController < ApplicationController
     #flash[:qwe] = @pic.id
 
     if @comment.save
+      session[:return_to] ||= request.referer
       flash[:success] = "Comment Added"
-      redirect_to root_url
+      redirect_to session.delete(:return_to)
     else
       render 'static_pages/home'
     end
   end
 
   def destroy
+    # Запоминаем откуда пришли
+    session[:return_to] ||= request.referer
+    # Выполняем действие - уничтожаем комментарий
+    Comment.find_by(id: params[:id]).destroy
+    # После выполнения действия возвращаемся назад
+    redirect_to session.delete(:return_to)
 
   end
 

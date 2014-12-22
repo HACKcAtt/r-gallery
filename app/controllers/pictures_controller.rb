@@ -8,7 +8,7 @@ class PicturesController < ApplicationController
     if @picture.save
       redirect_to "/users/#{current_user.id}/pictures/#{@picture.id}"
     else
-      flash.now[:error] = "Couldn't upload picture"
+      flash.now[:error] = "Произошла ошибка при загрузек фотографии!"
       render 'new'
     end
 
@@ -19,9 +19,15 @@ class PicturesController < ApplicationController
     @pic = Picture.find_by(id: params[:id])
     @comments = @pic.comments
     @comment = Comment.new
-    flash[:pic] = @comments.any?
+    #flash[:pic] = @comments.any?
     render 'show'
 
+  end
+
+  def destroy
+    session[:return_to] ||= request.referer
+    Picture.find_by(id: params[:id]).destroy
+    redirect_to current_user
   end
 
   private

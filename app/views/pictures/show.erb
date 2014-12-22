@@ -10,7 +10,18 @@
 
   <!-- ======== ОФОРМИТЬ ОПИСАНИЕ ==========-->
   <div class="span4 description">
-    <%= @pic.description %>
+    <b>Описание: </b><%= @pic.description %>
+  </div>
+
+
+  <div class="span 4 actions">
+    <b>Действия:</b> <%= link_to "delete", @pic, method: :delete, data: { confirm: "Are You Sure?",
+                                                   id: @pic.id }, title: @pic.description %>
+  </div>
+
+  <div class="span 4 actions">
+    <%= link_to "edit", @pic, method: :post, data: { prompt: "Are You Sure?",
+                                                                          id: @pic.id }, title: @pic.description %>
   </div>
 
   <!-- ======== ОФОРМИТЬ КОММЕНТАРИИ ==========-->
