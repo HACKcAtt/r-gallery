@@ -1,0 +1,33 @@
+<%= provide(:title, 'Show Picture') %>
+<h1>Show Picture</h1>
+
+<div class="row">
+  <!-- ======== ОФОРМИТЬ КАРТИНКУ ==========-->
+  <div class="span6 offset3">
+    <%= image_tag(@pic.link.url)
+    %>
+  </div>
+
+  <!-- ======== ОФОРМИТЬ ОПИСАНИЕ ==========-->
+  <div class="span4 description">
+    <%= @pic.description %>
+  </div>
+
+  <!-- ======== ОФОРМИТЬ КОММЕНТАРИИ ==========-->
+    <div class="span8">
+      <% if @pic.comments.any? %>
+        <h3>Commentaries: <%= @pic.comments.count %></h3>
+          <ol class="comments">
+            <%= render @pic.comments %>
+          </ol>
+
+
+      <% end %>
+
+    </div>
+
+  <!-- ======== ОФОРМИТЬ ФОРМА ДЛЯ КОММЕНТАРИЕВ ==========-->
+  <div>
+    <%= render 'shared/comment_form' %>
+  </div>
+</div>
