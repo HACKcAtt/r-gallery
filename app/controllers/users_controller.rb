@@ -22,13 +22,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def show
     @user = User.find(params[:id])
 
     #@picture = Picture.where("user_id = #{@user.id}").to_a
-
-    @picture = Picture.where("user_id = ?", @user.id).paginate(page: params[:page], per_page: 5)
-
+    @picture = Picture.where("user_id = ?", @user.id)
+    if !current_user?(@user)
+      @picture = @picture.where(hidden: false)
+    end
+    @picture = @picture.paginate(page: params[:page], per_page: 8)
+    #flash[:qwe] = @picture.first.link.thumb
 
   end
 

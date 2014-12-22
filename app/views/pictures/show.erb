@@ -13,15 +13,17 @@
     <b>Описание: </b><%= @pic.description %>
   </div>
 
-
+  <% if current_user?(User.find_by(id: params[:id])) %>
   <div class="span 4 actions">
     <b>Действия:</b> <%= link_to "delete", @pic, method: :delete, data: { confirm: "Are You Sure?",
                                                    id: @pic.id }, title: @pic.description %>
   </div>
+      <% end %>
 
   <div class="span 4 actions">
-    <%= link_to "edit", @pic, method: :post, data: { prompt: "Are You Sure?",
-                                                                          id: @pic.id }, title: @pic.description %>
+    <%= #link_to "edit", @pic, method: :post, data: { prompt: "Are You Sure?",
+                                #                                          id: @pic.id }, title: @pic.description
+    %>
   </div>
 
   <!-- ======== ОФОРМИТЬ КОММЕНТАРИИ ==========-->

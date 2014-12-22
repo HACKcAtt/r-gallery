@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141221140937) do
+ActiveRecord::Schema.define(version: 20141222203008) do
 
   create_table "comments", force: true do |t|
     t.string   "content"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20141221140937) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "hidden"
   end
 
   add_index "pictures", ["user_id", "created_at"], name: "index_pictures_on_user_id_and_created_at"

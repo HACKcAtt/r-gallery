@@ -7,19 +7,26 @@
       <%= gravatar_for @user %>
       <%= @user.name %>
     </h1>
+      <% if current_user?(User.find_by(id: params[:id])) %>
+      <%= link_to "Изменить", edit_user_path(current_user) %>
+          <% end %>
     </section>
   </aside>
 </div>
 <!-- ОФОРМИТЬ -->
-<b>Загруженные рисунки:</b>
+<% if @picture.any? %>
+<b>Загруженные изображения:</b>
 <%= will_paginate (@picture) %>
 <div>
   <% @picture.each do |l| %>
 
-      <%= link_to image_tag(l.link.url), controller: "pictures",
+      <%= link_to image_tag(l.link.thumb.url), controller: "pictures",
                   action: "show", user_id: params[:id], id: l.id  %>
 
   <% end %>
 </div>
 <%= will_paginate (@picture) %>
 <br />
+<% else %>
+    <b>Нет загруженных изображений</b>
+<% end %>

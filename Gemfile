@@ -46,6 +46,8 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
+gem 'mini_magick'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
