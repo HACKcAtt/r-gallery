@@ -7,8 +7,9 @@ class CommentsController < ApplicationController
 
     if @comment.save
       session[:return_to] ||= request.referer
-      flash[:success] = "Comment Added"
-      redirect_to session.delete(:return_to)
+      flash[:success] = "Комментарий добавлен"
+
+      redirect_to :back
     else
       render 'static_pages/home'
     end
@@ -20,7 +21,7 @@ class CommentsController < ApplicationController
     # Выполняем действие - уничтожаем комментарий
     Comment.find_by(id: params[:id]).destroy
     # После выполнения действия возвращаемся назад
-    redirect_to session.delete(:return_to)
+    redirect_to :back
 
   end
 

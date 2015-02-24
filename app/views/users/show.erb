@@ -19,10 +19,11 @@
 <%= will_paginate (@picture) %>
 <div>
   <% @picture.each do |l| %>
-
+<div class="well">
       <%= link_to image_tag(l.link.thumb.url), controller: "pictures",
                   action: "show", user_id: params[:id], id: l.id  %>
-
+      <%= l.description %>
+</div>
   <% end %>
 </div>
 <%= will_paginate (@picture) %>
