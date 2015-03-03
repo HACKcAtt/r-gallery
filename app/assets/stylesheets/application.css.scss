@@ -64,12 +64,40 @@ p {
 
 
 /* header */
+/* Large desktop */
+@media (min-width: 1200px) {
+  #logo {
+    color: red;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  #logo {
+    color: green;
+}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  #logo {
+    color: brown;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  #logo {
+    color: darkcyan;
+  }
+}
+
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
