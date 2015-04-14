@@ -28,9 +28,13 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (5.1.9)
+      execjs
+      json
     bcrypt-ruby (3.1.2)
-    bootstrap-sass (2.3.2.0)
-      sass (~> 3.2)
+    bootstrap-sass (3.3.4.1)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     bootstrap-will_paginate (0.0.9)
       will_paginate
     builder (3.2.2)
@@ -167,7 +171,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (= 3.1.2)
-  bootstrap-sass (= 2.3.2.0)
+  bootstrap-sass (~> 3.3.4)
   bootstrap-will_paginate (= 0.0.9)
   capybara (= 2.1.0)
   carrierwave (~> 0.10.0)

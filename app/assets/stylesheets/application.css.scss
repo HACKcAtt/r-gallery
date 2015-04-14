@@ -31,7 +31,7 @@ textarea {
 .center {
   text-align: center;
   h1 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 }
 
@@ -63,12 +63,25 @@ p {
 }
 
 
+.container {
+  width: 85%;
+}
+
+.navbar-fixed-top .container {
+  width: 100%;
+
+}
+
+
 /* header */
 /* Large desktop */
 @media (min-width: 1200px) {
   #logo {
     color: red;
+
+
   }
+
 }
 
 /* Portrait tablet to landscape and desktop */
@@ -76,6 +89,16 @@ p {
   #logo {
     color: green;
 }
+
+
+  .hero-unit h1 {
+    font-size: 50px;
+
+  }
+
+  .btn-large {
+    font-size: 15px;
+  }
 }
 
 /* Landscape phone to portrait tablet */
@@ -83,6 +106,25 @@ p {
   #logo {
     color: brown;
   }
+
+
+
+  .hero-unit h1 {
+    font-size: 30px;
+
+  }
+
+  .btn-large {
+    font-size: 12px;
+    padding: 10px 17px;
+  }
+
+  /* НАСТРОЙКА КНОПКИ НАВИГАЦИИ */
+  #menu_top {
+
+  }
+
+
 }
 
 /* Landscape phones and down */
@@ -90,8 +132,17 @@ p {
   #logo {
     color: darkcyan;
   }
-}
 
+  .hero-unit h1 {
+    font-size: 20px;
+
+  }
+
+  .btn-large {
+    font-size: 9px;
+    padding: 5px 14px;
+  }
+}
 
 #logo {
   float: left;
