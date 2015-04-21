@@ -1,32 +1,36 @@
 <%= provide(:title, 'Upload Picture') %>
 <h1>Загрузить изображение</h1>
 <br>
-<div class="row">
-  <div class="span6 offset3">
+
+
     <%= form_for(:picture, url: pictures_path, :html => {:multipart => true}) do |f|%>
-<div class="well">
-    <p>
+<div class="container myBox">
+  <div class="row">
+
       <%= f.label "Выбор изображения"%>
+        </div>
+  <div class="row">
       <%= f.file_field :link %>
-    </p>
-</div>
-    <br>
-    <div class="well">
-    <p>
+      </div>
+
+    <div class="row">
+
+
+
       <%= f.label "Описание изображения" %>
+        </div>
+<div class="row">
       <%= f.text_field :description %>
-    </p>
-      </div>
-    <br>
-    <div class="well">
-    <p>
-          <%= f.label "Скрыть от остальных" %>
-          <%= f.check_box :hidden %>
-        </p>
-      </div>
-    <div><%= f.submit "Загрузить изображение"%></div>
+        </div>
+
+
+      <div class="row">
+        <div class="col-xs-6"><%= f.label "Скрыть от всех" %></div>
+          <div class="col-xs-6"><%= f.check_box :hidden %></div>
+
+    </div>
+
+<div class="row"><%= f.submit "Отправить"%></div>
+            </div>
     <% end %>
 
-
-  </div>
-</div>

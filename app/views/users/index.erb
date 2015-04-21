@@ -1,13 +1,14 @@
 <% provide(:title, 'Все пользователи') %>
 <h1>Список пользователей</h1>
-
-<%= will_paginate %>
+<div class="center">
+<%= will_paginate :previous_label => "«", :next_label => "»", renderer: BootstrapPagination::Rails %>
 <ul class="users">
   <% @users.each do |user| %>
       <li>
-        <%= gravatar_for(user) %>
+        <%= gravatar_for(user)  %>
         <%= link_to user.name, user %>
       </li>
   <% end %>
 </ul>
-<%= will_paginate %>
+<%= will_paginate :previous_label => "«", :next_label => "»", renderer: BootstrapPagination::Rails %>
+</div>

@@ -1,4 +1,7 @@
-@import "bootstrap";
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap-custom";
+
 
 /* mixins, variables, etc. */
 
@@ -11,6 +14,7 @@ $grayMediumLight: #eaeaea;
 }
 
 /* universal */
+
 
 html {
   overflow-y: scroll;
@@ -35,6 +39,31 @@ textarea {
   }
 }
 
+.pagination + ul {
+  padding-left: 0;
+}
+
+img {
+  max-width: 100%;
+  height:auto;
+}
+
+.navbar-nav > li > a:hover{
+  color: black;
+}
+
+.myBox {
+  max-width: 715px;
+  background-color: rgb(238, 238, 238);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  box-sizing: border-box;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,109 +83,120 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: $gray-light;
 }
 
-p {
+.jumbotron p, p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
 
+.gravatar {
+  max-width:20%;
+  height:auto;
+  float: left;
+  margin-right: 10px;
 
+}
 .container {
   width: 85%;
 }
 
 .navbar-fixed-top .container {
-  width: 100%;
+  // width: 80%;
 
 }
 
+.pagination {
+  margin: 0 0;
 
-/* header */
+  }
+
+.row  {
+  padding-right:10px;
+  padding-left:10px;
+}
+
+  #logo {
+    float: left;
+    margin-right: 10px;
+    margin-left: -10px;
+    font-size: 1.7em;
+
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 13px;
+    font-weight: bold;
+    line-height: 1;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+.users li a {
+  font-size: 2em;
+  float:left;
+
+}
+  /* header */
 /* Large desktop */
 @media (min-width: 1200px) {
-  #logo {
-    color: red;
-
+  .jumbotron h1, h1 {
+    font-size: 3em;
 
   }
-
 }
+/*
+81
+64
+40
 
+*/
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
-  #logo {
-    color: green;
-}
 
 
-  .hero-unit h1 {
-    font-size: 50px;
+  .jumbotron h1, h1 {
+    font-size: 2.4em;
 
   }
 
-  .btn-large {
-    font-size: 15px;
+  .users li a {
+    font-size: 1.63em;
+
   }
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-  #logo {
-    color: brown;
+
+  .jumbotron h1, h1 {
+    font-size: 1.7em;
   }
 
 
-
-  .hero-unit h1 {
-    font-size: 30px;
-
-  }
-
-  .btn-large {
-    font-size: 12px;
-    padding: 10px 17px;
-  }
-
-  /* НАСТРОЙКА КНОПКИ НАВИГАЦИИ */
-  #menu_top {
+  .users li a {
+    font-size: 1.28em;
 
   }
-
-
 }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  #logo {
-    color: darkcyan;
-  }
 
-  .hero-unit h1 {
-    font-size: 20px;
+  .jumbotron h1, h1 {
+   // font-size: 1.2em;
 
   }
 
-  .btn-large {
-    font-size: 9px;
-    padding: 5px 14px;
+  .comments {
+    font-size: 10px;
   }
-}
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
+  .users li a {
+    font-size: 0.8em;
 
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
-  &:hover {
-    color: white;
-    text-decoration: none;
   }
 }
 
@@ -166,11 +206,11 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  color: $gray-light;
   a {
     color: $gray;
     &:hover {
-      color: $grayDarker;
+      color: $gray-darker;
     }
   }
   small {
@@ -199,7 +239,7 @@ footer {
 aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px solid $gray-lighter;
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -218,12 +258,6 @@ aside {
     }
   }
 }
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
 
 /* forms */
 
@@ -259,9 +293,9 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px solid $gray-lighter;
     &:last-child {
-      border-bottom: 1px solid $grayLighter;
+      border-bottom: 1px solid $gray-lighter;
     }
   }
 }

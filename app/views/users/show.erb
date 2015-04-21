@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 
-<div class="row">
+
   <aside class="span4">
     <section>
     <h1>
@@ -12,11 +12,11 @@
           <% end %>
     </section>
   </aside>
-</div>
+
 <!-- ОФОРМИТЬ -->
 <% if @picture.any? %>
 <b>Загруженные изображения:</b>
-<%= will_paginate (@picture) %>
+<%= will_paginate (@picture), :previous_label => "«", :next_label => "»", renderer: BootstrapPagination::Rails  %>
 <div>
   <% @picture.each do |l| %>
 <div class="well">
@@ -26,7 +26,8 @@
 </div>
   <% end %>
 </div>
-<%= will_paginate (@picture) %>
+<%= will_paginate (@picture), :previous_label => "«", :next_label => "»", renderer: BootstrapPagination::Rails %>
+
 <br />
 <% else %>
     <b>Нет загруженных изображений</b>
