@@ -23,6 +23,8 @@ group :development, :test do
   gem 'sqlite3', '~> 1.3.8'
   gem 'rspec-rails', '~> 2.13.1'
   gem 'minitest'
+  # Для дебаггинга - вывод в консоль браузера
+  #gem 'rconsole', '~> 0.1.0'
 end
 
 group :test do
@@ -49,6 +51,8 @@ group :production do
 end
 
 gem 'mini_magick'
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

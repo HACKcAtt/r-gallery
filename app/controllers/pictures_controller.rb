@@ -24,6 +24,7 @@ class PicturesController < ApplicationController
   end
 
   def show
+
     @pic = Picture.find_by(id: params[:id], user_id: params[:user_id])
     if @pic.hidden
       session[:return_to] ||= request.referer

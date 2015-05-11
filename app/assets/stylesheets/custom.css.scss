@@ -52,6 +52,7 @@ img {
   color: black;
 }
 
+
 .myBox {
   max-width: 715px;
   background-color: rgb(238, 238, 238);
@@ -142,8 +143,10 @@ h2 {
   /* header */
 /* Large desktop */
 @media (min-width: 1200px) {
+
   .jumbotron h1, h1 {
     font-size: 3em;
+
 
   }
 }
@@ -299,3 +302,11 @@ input {
     }
   }
 }
+
+.comments_input, .limited {
+
+  margin:0 auto;
+  max-width: 500px;
+
+}
+

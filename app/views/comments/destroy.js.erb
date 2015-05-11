@@ -1,0 +1,10 @@
+$(".comments_form").html("");
+
+<% if @pic.comments.any? %>
+
+$(".comments_form").append("<h3 id = 'com_count'>Количество коментариев: <%= @pic.comments.count %></h3>");
+$(".comments_form").append("<ol class='btn-sm' id='comments'>");
+$(".comments_form").append("</ol>");
+
+$("#comments").html("<%= escape_javascript(render(@pic.comments)) %>");
+<% end %>

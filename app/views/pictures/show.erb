@@ -26,18 +26,17 @@
 
 <br><br>
   <!-- ======== ОФОРМИТЬ КОММЕНТАРИИ ==========-->
-<div class="row">
+<div class="row comments_form">
 
         <% if @pic.comments.any? %>
-        <h3>Комментарии: <%= @pic.comments.count %></h3>
-          <ol class="comments btn-sm">
+        <h3 id = "com_count">Количество коментариев: <%= @pic.comments.count %></h3>
+          <ol class="btn-sm" id="comments">
             <%= render @pic.comments %>
           </ol>
-      <% end %>
+        <% end %>
 
-
+</div>
   <!-- ======== ОФОРМИТЬ ФОРМА ДЛЯ КОММЕНТАРИЕВ ==========-->
-  <div>
+  <div class = "comments_input">
     <%= render 'shared/comment_form' %>
   </div>
-</div>

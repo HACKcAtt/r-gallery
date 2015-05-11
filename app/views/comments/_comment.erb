@@ -7,8 +7,8 @@
   </span>
 
   <% if current_user.id.equal?(comment.user_id) %>
-    <%= link_to "delete", comment, method: :delete, data: { confirm: "Вы уверены?",
-                                                            id: comment.id }, title: comment.content %>
+
+    <%= link_to "delete", comment_path(:pic_id => comment.picture_id, :id => comment.id), remote: true, method: :delete, data: { confirm: "Вы уверены?" }, title: comment.content %>
   <% end %>
 </li>
 
