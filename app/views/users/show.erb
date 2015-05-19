@@ -16,13 +16,15 @@
 <!-- ОФОРМИТЬ -->
 <% if @picture.any? %>
 <b>Загруженные изображения:</b>
+    <div class="center">
 <%= will_paginate (@picture), :previous_label => "«", :next_label => "»", renderer: BootstrapPagination::Rails  %>
-<div>
+
+      <div class="image_container">
   <% @picture.each do |l| %>
-<div class="well image_preview">
+<div class="image_preview imagebox">
       <%= link_to image_tag(l.link.thumb.url), controller: "pictures",
                   action: "show", user_id: params[:id], id: l.id  %>
-      <%= l.description %>
+      <%#= l.description %>
 </div>
   <% end %>
 </div>
@@ -32,3 +34,4 @@
 <% else %>
     <b>Нет загруженных изображений</b>
 <% end %>
+</div>

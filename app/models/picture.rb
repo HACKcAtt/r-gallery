@@ -5,6 +5,13 @@ class Picture < ActiveRecord::Base
 
   has_many :comments, dependent: :destroy
 
+  def next
+    user.pictures.where("id > ?", id).first
+  end
+
+  def prev
+    user.pictures.where("id < ?", id).last
+  end
 end
 
 

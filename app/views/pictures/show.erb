@@ -4,11 +4,17 @@
 <div class="row">
   <!-- ======== ОФОРМИТЬ КАРТИНКУ ==========-->
   <div class="span10 offset1">
-    <div class="well">
+    <div class="image_container imagebox">
     <%= image_tag(@pic.link.url)%>
     </div>
   </div>
-
+  <% if !@pic.prev.blank? %>
+ <%= link_to "", user_picture_path(:id => @pic.prev.id, :user_id => params[:user_id]), class: "left-link", action: 'show', id: current_user.id %>
+  <% end %>
+    <% if !@pic.next.blank? %>
+      <%= link_to "", user_picture_path(:id => @pic.next.id, :user_id => params[:user_id]), class: "right-link",
+                action: 'show', id: current_user.id %>
+    <% end %>
   <!-- ======== ОФОРМИТЬ ОПИСАНИЕ ==========-->
   <div class="span3 description">
     <b>Описание: </b><%= @pic.description %>
@@ -17,11 +23,13 @@
   <% if current_user?(User.find_by(id: params[:user_id])) %>
   <div class="span 3 actions">
     <b>Действия:</b>
-    <button type="button" class="btn btn-link"><%= link_to "Удалить", @pic, method: :delete, data: { confirm: "Вы уверены?",
+
+    <button type="button" class="btn btn-link"><%= link_to "Удалить", picture_path(:id => @pic.id, :user_id => params[:user_id]), method: :delete, data: { confirm: "Вы уверены?",
                                                    id: @pic.id }, title: @pic.description %></button>
 
       <% end %>
   </div>
+
 </div>
 
 <br><br>

@@ -54,7 +54,7 @@ img {
 
 
 .myBox {
-  max-width: 715px;
+  max-width: 515px;
   background-color: rgb(238, 238, 238);
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -150,6 +150,7 @@ h2 {
 
   }
 }
+
 /*
 81
 64
@@ -193,20 +194,15 @@ h2 {
 
   }
 
-  .comments {
-    font-size: 10px;
-  }
-
-  .users li a {
-    font-size: 0.8em;
-
-  }
 }
 
 /* footer */
 
 footer {
+  width: 80%;
   margin-top: 45px;
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
   color: $gray-light;
@@ -303,6 +299,10 @@ input {
   }
 }
 
+.comments_form {
+  width: 85%;
+  margin:0 auto;
+}
 .comments_input, .limited {
 
   margin:0 auto;
@@ -310,3 +310,66 @@ input {
 
 }
 
+.navbar-right > li > a {
+  text-align: right;
+}
+
+
+/* Центрирование превьюшек изображений */
+.image_container {
+  width: 100%;
+  text-align:center;
+}
+
+.image_preview {
+  display: inline-block;
+  width: 220px;
+  height: 220px;
+
+  text-align: center;
+
+}
+
+.imagebox {
+  padding: 10px;
+  margin: 2px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.image_preview > a:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.image_preview > a > img {
+  border: 1px solid black;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -0.35em;
+}
+
+.left-link, .right-link {
+  display: inline-block;
+  //border: solid 1px black;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  text-align: left;
+}
+
+.left-link {
+  cursor: pointer;
+  background: url(left.png);
+}
+.right-link {
+  cursor: pointer;
+  background: url(right.png);
+  text-align: right;
+  float: right;
+}

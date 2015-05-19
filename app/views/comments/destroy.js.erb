@@ -1,5 +1,6 @@
-$(".comments_form").html("");
 
+$(".comments_form").html("");
+$("#comment_content").val("");
 <% if @pic.comments.any? %>
 
 $(".comments_form").append("<h3 id = 'com_count'>Количество коментариев: <%= @pic.comments.count %></h3>");

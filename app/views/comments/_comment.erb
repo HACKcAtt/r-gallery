@@ -1,5 +1,5 @@
 <li>
- <span class="author"> <%= link_to User.find_by(id: comment.user_id).name , controller: "users", action: 'show', id: current_user.id %>
+ <span class="author"> <%= link_to User.find_by(id: comment.user_id).name , controller: "users", action: 'show', id: comment.user_id %>
   </span>
   <span class="content"><b><%= comment.content %></b></span>
   <span class="timestamp">

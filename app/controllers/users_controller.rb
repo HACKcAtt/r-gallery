@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     if !current_user?(@user)
       @picture = @picture.where(hidden: false)
     end
-    @picture = @picture.paginate(page: params[:page], per_page: 8)
+    @picture = @picture.paginate(page: params[:page], per_page: 6)
     #flash[:qwe] = @picture.first.link.thumb
 
   end

@@ -43,8 +43,10 @@ class PicturesController < ApplicationController
   end
 
   def destroy
+       logger.debug "~~~~~~~~~~~DEBUG INFO: somethin #{params} "
+       Picture.find_by(id: params[:id], user_id: params[:user_id]).destroy
     session[:return_to] ||= request.referer
-    Picture.find_by(id: params[:id]).destroy
+
     redirect_to current_user
   end
 
@@ -61,7 +63,7 @@ class PicturesController < ApplicationController
   end
 
   def correct_user
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     redirect_to(root_url) unless current_user?(@user)
   end
 
