@@ -5,7 +5,23 @@
   <!-- ======== ОФОРМИТЬ КАРТИНКУ ==========-->
   <div class="span10 offset1">
     <div class="image_container imagebox">
-    <%= image_tag(@pic.link.url)%>
+      <% if !@pic.prev.blank? %>
+
+
+      <%= link_to "", user_picture_path(:id => @pic.prev.id, :user_id => params[:user_id]), class:"l_link_box", action: 'show', id: current_user.id %>
+
+
+              <% end %>
+      <% if !@pic.next.blank?  %>
+
+      <%= link_to "", user_picture_path(:id => @pic.next.id, :user_id => params[:user_id]), class:"r_link_box", action: 'show', id: current_user.id %>
+
+              <% end %>
+
+
+      <%= image_tag(@pic.link.url)%>
+
+
     </div>
   </div>
   <% if !@pic.prev.blank? %>

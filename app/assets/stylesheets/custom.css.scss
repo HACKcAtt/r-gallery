@@ -331,6 +331,7 @@ input {
 }
 
 .imagebox {
+  position: relative;
   padding: 10px;
   margin: 2px;
   background-color: #f5f5f5;
@@ -372,4 +373,21 @@ input {
   background: url(right.png);
   text-align: right;
   float: right;
+}
+
+
+.r_link_box, .l_link_box {
+  display:block;
+  position: absolute;
+  width: 45%;
+  height: 100%;
+
+  &:hover {
+    background-color: #9d9d9d;
+    opacity: 0.2;
+  }
+}
+
+.r_link_box {
+  left: 55%;
 }
